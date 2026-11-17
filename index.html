@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nayeon Lee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<meta name="description" content="Nayeon Lee — applied scientist working on LLMs, personalization, and cultural awareness in NLP.">
+<style>
+:root{
+  --bg:#fbfaf7; --fg:#1d1d1b; --muted:#6b6a65; --line:#e6e3dc; --card:#ffffff;
+  --accent:#2f5d8a; --accent-soft:#e8eff6; --award:#8a5a12; --award-soft:#f7eedd;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141413; --fg:#ecebe6; --muted:#9c9a93; --line:#2c2b28; --card:#1c1c1a;
+    --accent:#8db6df; --accent-soft:#1f2b37; --award:#e2b56b; --award-soft:#2e2618;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141413; --fg:#ecebe6; --muted:#9c9a93; --line:#2c2b28; --card:#1c1c1a;
+  --accent:#8db6df; --accent-soft:#1f2b37; --award:#e2b56b; --award-soft:#2e2618;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font:16px/1.7 "Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+  font-feature-settings:"ss01","ss06";-webkit-font-smoothing:antialiased;letter-spacing:-.003em}
+.serif,.hero h1,.job h3,.card h3,h3.sub,nav .name{font-family:Newsreader,"Iowan Old Style",Georgia,serif;letter-spacing:-.01em}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:54px;gap:12px}
+nav .name{font-size:19px;font-weight:500;color:var(--fg)}
+nav .links{display:flex;gap:18px;font-size:14px;overflow-x:auto}
+nav .links a{color:var(--muted);white-space:nowrap}
+nav .links a:hover{color:var(--fg);text-decoration:none}
+header.hero{padding:64px 0 36px}
+.hero h1{font-size:48px;line-height:1.1;margin:0 0 8px;font-weight:500;letter-spacing:-.025em}
+.hero .ko{font-family:"Pretendard Variable",Pretendard,sans-serif;color:var(--muted);font-size:19px;font-weight:400;margin-left:8px;letter-spacing:0}
+.hero .role{font-size:17px;color:var(--muted);margin:0 0 22px}
+.hero p.lead{font-size:17.5px;line-height:1.75;max-width:680px;margin:0 0 22px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px;padding:0;list-style:none}
+.chips li{font-size:13px;padding:4px 11px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;font-size:14px;padding:8px 15px;border:1px solid var(--line);border-radius:8px;
+  color:var(--fg);background:var(--card)}
+.btn:hover{border-color:var(--accent);text-decoration:none}
+section{padding:36px 0;border-top:1px solid var(--line)}
+section h2{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 22px;font-weight:650}
+.job{display:grid;grid-template-columns:150px 1fr;gap:6px 24px;margin-bottom:30px}
+.job:last-child{margin-bottom:0}
+.job .when{color:var(--muted);font-size:14px;padding-top:2px}
+.job h3{margin:0;font-size:21px;font-weight:500}
+.job .org{color:var(--muted);font-size:15px;margin:0 0 8px}
+.job ul{margin:0;padding-left:18px}
+.job li{margin:4px 0}
+.pub{padding:14px 0;border-bottom:1px dashed var(--line)}
+.pub:last-child{border-bottom:0}
+.pub .t{font-weight:600;font-size:16.5px;letter-spacing:-.005em}
+.pub .en{font-size:14.5px;color:var(--fg);opacity:.78;margin-top:1px}
+.pub .a{color:var(--muted);font-size:14px;margin:3px 0}
+.pub .a b{color:var(--fg);font-weight:600}
+.pub .v{font-size:14px;font-style:italic}
+.pub .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:7px;align-items:center}
+.tag{font-size:12px;padding:2px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.tag.award{border-color:transparent;background:var(--award-soft);color:var(--award);font-weight:600}
+.tag.first{border-color:transparent;background:var(--accent-soft);color:var(--accent)}
+.pub .meta a{font-size:13px}
+h3.sub{font-size:19px;font-weight:500;margin:28px 0 4px;color:var(--fg)}
+h3.sub:first-of-type{margin-top:0}
+.awards{list-style:none;margin:0;padding:0}
+.awards li{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:7px 0}
+.awards .when{color:var(--muted);font-size:14px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.card h3{margin:0 0 6px;font-size:19px;font-weight:500}
+.card p{margin:0;font-size:15px;color:var(--muted)}
+footer{padding:30px 0 50px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  header.hero{padding:40px 0 26px}
+  .hero h1{font-size:31px}
+  .hero .ko{display:block;margin:4px 0 0}
+  .job,.awards li{grid-template-columns:1fr;gap:2px}
+  .cols{grid-template-columns:1fr}
+  nav .name{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="name" href="#top">Nayeon Lee</a>
+  <div class="links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#publications">Publications</a>
+    <a href="#awards">Awards</a>
+  </div>
+</div></nav>
+
+<div class="wrap" id="top">
+
+<header class="hero">
+  <h1>Nayeon Lee <span class="ko">이나연</span></h1>
+  <p class="role">Machine Learning Engineer · Agentic App AI, NAVER · Seoul</p>
+  <p class="lead">I work where large language models meet real users. At NAVER I build home-feed
+    recommendation models on top of LLM-based user memory; before that I trained LLMs and built
+    agentic models at Samsung Research, and studied <em>whose culture LLMs reflect</em> at KAIST.
+    What connects it all: I start from where users or models actually fail, make it measurable,
+    and fix it with data and modeling.</p>
+  <ul class="chips">
+    <li>AI agents</li><li>Personalization</li><li>LLM evaluation</li><li>LLM post-training</li>
+    <li>Cultural NLP</li><li>Benchmarks &amp; datasets</li>
+  </ul>
+  <div class="btns">
+    <a class="btn" href="mailto:nlee0212@kaist.ac.kr">Email</a>
+    <a class="btn" href="https://scholar.google.com/citations?user=C8MUVcEAAAAJ&amp;hl=en">Google Scholar</a>
+    <a class="btn" href="cv.pdf">CV (PDF)</a>
+    <!-- TODO: fill in and uncomment
+    <a class="btn" href="https://github.com/USERNAME">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/USERNAME">LinkedIn</a>
+    -->
+  </div>
+</header>
+
+<section id="about">
+  <h2>About</h2>
+  <div class="cols">
+    <div class="card">
+      <h3>Personalization with LLM memory</h3>
+      <p>Turning users' activity across search, shopping, short-form video and live streaming into an
+        LLM-summarized personal memory, and using it to retrieve content people actually want in their feed.</p>
+    </div>
+    <div class="card">
+      <h3>Training &amp; agentic LLMs</h3>
+      <p>SFT across the full cycle — data synthesis and filtering, recipes, evaluation, error analysis —
+        plus agent models that reason over streaming, stateful sensor inputs.</p>
+    </div>
+    <div class="card">
+      <h3>Culture in NLP</h3>
+      <p>Datasets and benchmarks showing how hate-speech judgments, social bias, and everyday knowledge
+        differ across cultures and languages — and where LLMs fall short.</p>
+    </div>
+    <div class="card">
+      <h3>How I work</h3>
+      <p>Evidence first: offline harnesses, log replay and simulations before A/B tests, careful separation
+        of real effects from confounds, and plain statements of what the data cannot show.</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="when">Mar 2026 – present</div>
+    <div>
+      <h3>NAVER</h3>
+      <p class="org">Machine Learning Engineer · Agentic App AI · Seoul</p>
+      <ul>
+        <li>Lead the home-feed retrievers built on LLM-based user memory — recent interests, long-term
+          interests, and trending-topic matching — end to end: modeling, C++ serving, data pipelines,
+          A/B tests and rollout.</li>
+        <li>Roughly doubled the share of the home feed served by these models in about a month by
+          fixing each stage of the pipeline (memory selection, LLM-generated query titles, candidate
+          ordering for the ranker, supply), while lifting feed-wide clicks and visits — most of all
+          among dormant users — and raising content quality.</li>
+        <li>Designed a co-search-graph query expansion that maps user memory to trending keywords; shipped
+          to all users after improving next-day retention.</li>
+        <li>Build LLM pipelines that turn user memory into next-step actions and personalized briefings
+          for the NAVER app's agent features.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">Oct 2024 – Feb 2026</div>
+    <div>
+      <h3>Samsung Research</h3>
+      <p class="org">Machine Learning Engineer · AI Model Team (LLM Foundation → Agentic AI)</p>
+      <ul>
+        <li>Supervised fine-tuning of Samsung's in-house LLM across the full cycle; the next release
+          improved substantially across six benchmarks and became the teacher for on-device models.</li>
+        <li>Led currency &amp; unit translation end to end — news-grounded synthetic data, rule-based
+          seed generators and automatic validators — outperforming much larger open models on the
+          internal benchmark.</li>
+        <li>Owned SFT data quality: fixed a shared filtering bug, standardized math/science output
+          formats, and automated dataset versioning and mixtures.</li>
+        <li>Built a model for Agentic Home / Agentic Factory scenarios that detects intent from appliance
+          sensor streams and sends it to the device orchestrator.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="when">Mar 2023 – Oct 2023</div>
+    <div>
+      <h3>NAVER AI Lab</h3>
+      <p class="org">Research Intern</p>
+      <ul>
+        <li>Designed and built the KoBBQ dataset; ran a large-scale Korean public stereotype survey.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sub" style="margin-top:6px">Earlier research</h3>
+  <ul class="awards">
+    <li><span class="when">Sep – Nov 2021</span><span>Research Intern, LDI Lab (Prof. Seung-won Hwang), Seoul National University — embedding inversion attacks in a black-box setting</span></li>
+    <li><span class="when">Mar – Aug 2021</span><span>Research Student, CV Lab (Prof. Sangpil Kim), Korea University — stock prediction with PLMs and sentiment analysis</span></li>
+    <li><span class="when">Jan – Feb 2021</span><span>Research Intern, ISDS Lab (Prof. Myoung-Wan Koo), Sogang University — end-to-end goal-oriented dialogue with KoGPT-2</span></li>
+    <li><span class="when">Jun – Dec 2020</span><span>Team Lead, Data Planning / Research Associate, ESSENPLAT (startup)</span></li>
+  </ul>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="job">
+    <div class="when">Feb 2022 – Aug 2024</div>
+    <div>
+      <h3>KAIST</h3>
+      <p class="org">M.S. in Computer Science · School of Computing · Advisor: Prof. Alice Oh</p>
+      <ul>
+        <li>Thesis: <em>Exploring Cross-Cultural Differences in English Hate Speech Annotations: From Dataset Construction to Analysis</em></li>
+        <li>Graduated with five first-author papers, including NAACL, TACL and NeurIPS — each of those three received an award.</li>
+        <li>TA: AI and its Social Impact (CoE491A, 2023 Spring), Programming Practice (CS109, 2022 Fall), Operating Systems and Lab (CS330, 2022 Spring)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="job">
+    <div class="when">Feb 2017 – Feb 2022</div>
+    <div>
+      <h3>Sogang University</h3>
+      <p class="org">B.S. in Computer Science and Engineering &amp; Artificial Intelligence (double major) · Cum Laude</p>
+      <ul>
+        <li>President of the College of Engineering Student Council (2018–2019)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <h2>Publications</h2>
+  <p style="margin:-8px 0 18px;color:var(--muted);font-size:14px">* equal contribution.
+    Also on <a href="https://scholar.google.com/citations?user=C8MUVcEAAAAJ&amp;hl=en">Google Scholar</a>.</p>
+
+  <h3 class="sub">2026</h3>
+  <div class="pub">
+    <div class="t"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=C8MUVcEAAAAJ&amp;citation_for_view=C8MUVcEAAAAJ:Se3iqnhoufwC">CORAL: Adaptive Retrieval Loop for Culturally-Aligned Multilingual RAG</a></div>
+    <div class="a"><b>Nayeon Lee*</b>, Jiwoo Song*, Byeongcheol Kang*</div>
+    <div class="v">Findings of ACL 2026</div>
+    <div class="meta"><span class="tag first">co-first author</span></div>
+  </div>
+  <div class="pub">
+    <div class="t"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=C8MUVcEAAAAJ&amp;citation_for_view=C8MUVcEAAAAJ:roLk4NBRz8UC">FINEST: Improving LLM Responses to Sensitive Topics Through Fine-Grained Evaluation</a></div>
+    <div class="a">Juhyun Oh*, <b>Nayeon Lee*</b>, Chani Jung, Jiho Jin, Junho Myung, Jongwon Lee, Taieui Song, Alice Oh</div>
+    <div class="v">Findings of EACL 2026</div>
+    <div class="meta"><span class="tag first">co-first author</span></div>
+  </div>
+
+  <h3 class="sub">2024</h3>
+  <div class="pub">
+    <div class="t"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=C8MUVcEAAAAJ&amp;citation_for_view=C8MUVcEAAAAJ:W7OEmFMy1HYC">Exploring Cross-Cultural Differences in English Hate Speech Annotations: From Dataset Construction to Analysis</a> (CREHate)</div>
+    <div class="a"><b>Nayeon Lee</b>, Chani Jung*, Junho Myung*, Jiho Jin, Jose Camacho-Collados, Juho Kim, Alice Oh</div>
+    <div class="v">NAACL 2024</div>
+    <div class="meta"><span class="tag first">first author</span><span class="tag award">NAACL 2024 Resource Award</span></div>
+  </div>
+  <div class="pub">
+    <div class="t"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=C8MUVcEAAAAJ&amp;citation_for_view=C8MUVcEAAAAJ:ufrVoPGSRksC">BLEnD: A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages</a></div>
+    <div class="a">Junho Myung*, <b>Nayeon Lee*</b>, Yi Zhou*, Jiho Jin, Rifki Afina Putri, et al.</div>
+    <div class="v">NeurIPS 2024 Datasets and Benchmarks Track</div>
+    <div class="meta"><span class="tag first">co-first author</span><span class="tag award">C3NLP 2024 Best Paper Award</span>
+      <span class="tag">13 languages · 16 countries</span></div>
+  </div>
+  <div class="pub">
+    <div class="t"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=C8MUVcEAAAAJ&amp;citation_for_view=C8MUVcEAAAAJ:Y0pCki6q_DkC">KoBBQ: Korean Bias Benchmark for Question Answering</a></div>
+    <div class="a">Jiho Jin*, Jiseon Kim*, <b>Nayeon Lee*</b>, Haneul Yoo*, Alice Oh, Hwaran Lee</div>
+    <div class="v">Transactions of the Association for Computational Linguistics (TACL), vol. 12</div>
+    <div class="meta"><span class="tag first">co-first author</span><span class="tag award">KAIST Graduate Student Outstanding Journal Award</span></div>
+  </div>
+  <div class="pub">
+    <div class="t"><a href="https://arxiv.org/abs/2404.01954">HyperCLOVA X Technical Report</a></div>
+    <div class="a">HyperCLOVA X Team</div>
+    <div class="v">arXiv:2404.01954</div>
+    <div class="meta"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=C8MUVcEAAAAJ&amp;citation_for_view=C8MUVcEAAAAJ:zYLM7Y9cAGgC">Scholar</a></div>
+  </div>
+
+  <h3 class="sub">2023</h3>
+  <div class="pub">
+    <div class="t"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=C8MUVcEAAAAJ&amp;citation_for_view=C8MUVcEAAAAJ:u5HHmVD_uO8C">Hate Speech Classifiers are Culturally Insensitive</a></div>
+    <div class="a"><b>Nayeon Lee</b>, Chani Jung, Alice Oh</div>
+    <div class="v">First Workshop on Cross-Cultural Considerations in NLP (C3NLP), ACL 2023</div>
+    <div class="meta"><span class="tag first">first author</span></div>
+  </div>
+
+  <h3 class="sub">Korean venues (2021–2022)</h3>
+  <div class="pub">
+    <div class="t" lang="ko"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=C8MUVcEAAAAJ&amp;citation_for_view=C8MUVcEAAAAJ:d1gkVwhDpl0C">Graph2Tree 모델을 이용한 한국어 수학 문장제 문제 풀이</a></div>
+    <div class="en">A Graph2Tree Model for Solving Korean Math Word Problems</div>
+    <div class="a">Donggeun Kim, <b>Nayeon Lee</b>, Hyunwoo Sim, Myoung-Wan Koo</div>
+    <div class="v">Journal of KIISE 49(10), 2022</div>
+  </div>
+  <div class="pub">
+    <div class="t" lang="ko"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=C8MUVcEAAAAJ&amp;citation_for_view=C8MUVcEAAAAJ:9yKSN-GCB0IC">Graph-to-Tree 신경망 모델을 이용한 한국어 서술형 수학 문제 풀이</a></div>
+    <div class="en">Graph-to-Tree Neural Networks for Solving Korean Math Word Problems</div>
+    <div class="a">Donggeun Kim, <b>Nayeon Lee</b>, Hyunwoo Sim, Myoung-Wan Koo</div>
+    <div class="v">KIISE Korea Software Congress (KSC) 2021</div>
+    <div class="meta"><span class="tag award">KSC 2021 Top Award</span></div>
+  </div>
+  <div class="pub">
+    <div class="t" lang="ko"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=C8MUVcEAAAAJ&amp;citation_for_view=C8MUVcEAAAAJ:u-x6o8ySG0sC">BART 모델에 기반한 논문 요약 어플리케이션</a></div>
+    <div class="en">A Summarizing Application of Technical Papers based on BART Model</div>
+    <div class="a"><b>Nayeon Lee</b>, Su-Jin Park, Na-Hyun Shin, Myoung-Wan Koo</div>
+    <div class="v">KIISE Korea Computer Congress (KCC) 2021</div>
+    <div class="meta"><span class="tag first">first author</span><span class="tag award">KCC 2021 Top Award</span></div>
+  </div>
+  <div class="pub">
+    <div class="t" lang="ko"><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=C8MUVcEAAAAJ&amp;citation_for_view=C8MUVcEAAAAJ:2osOgNQ5qMEC">KorQuAD 데이터셋과 KoBERT Tokenizer를 이용한 KoBART 모델 성능의 분석</a></div>
+    <div class="en">Performance Analysis of KoBART Model Using KorQuAD Dataset and KoBERT Tokenizer</div>
+    <div class="a">Joon-Yong Park, Daeho Lee, Yoon Bang, <b>Nayeon Lee</b>, Ji-Hwan Kim</div>
+    <div class="v">KIISE Korea Computer Congress (KCC) 2021</div>
+    <div class="meta"><span class="tag award">KCC 2021 Excellence Award</span></div>
+  </div>
+</section>
+
+<section id="awards">
+  <h2>Awards &amp; Honors</h2>
+  <ul class="awards">
+    <li><span class="when">Oct 2024</span><span><b>Graduate Student Outstanding Journal Award</b>, KAIST — KoBBQ</span></li>
+    <li><span class="when">Aug 2024</span><span><b>Best Paper Award</b>, C3NLP 2024 — BLEnD</span></li>
+    <li><span class="when">Aug 2024</span><span><b>Best Poster Award</b>, 1st International NLP Workshop @ KAIST</span></li>
+    <li><span class="when">Jun 2024</span><span><b>Resource Award</b>, NAACL 2024 — CREHate</span></li>
+    <li><span class="when">Feb 2022</span><span><b>Top Award</b>, KSC 2021 Undergraduate/Junior Paper Competition, KIISE</span></li>
+    <li><span class="when">Jul 2021</span><span><b>Top Award</b>, KCC 2021 Undergraduate/Junior Paper Competition, KIISE</span></li>
+    <li><span class="when">Jul 2021</span><span><b>Excellence Award</b>, KCC 2021 Undergraduate/Junior Paper Competition, KIISE</span></li>
+    <li><span class="when">Apr 2021</span><span>Academic Excellence Award (top 1% in Engineering, Fall 2020), Sogang University</span></li>
+  </ul>
+</section>
+
+<section id="more">
+  <h2>Beyond work</h2>
+  <div class="cols">
+    <div class="card">
+      <h3>Languages</h3>
+      <p>Korean (native) · English (full professional) · Chinese (moderate)</p>
+    </div>
+    <div class="card">
+      <h3>Living across cultures</h3>
+      <p>Seven years at international schools in China and Vietnam; ICT volunteer teaching at
+        Mongolia International University, Ulaanbaatar.</p>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<footer><div class="wrap">© 2026 Nayeon Lee · Last updated November 2026</div></footer>
+</body>
+</html>
